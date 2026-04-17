@@ -1,0 +1,33 @@
+# Configuration Data Sense Analytics
+# Utilisateurs autorisés
+
+users:
+  # Utilisateur par défaut
+  - username: "admin"
+    password: "admin123"
+    role: "administrator"
+    email: "admin@datasense.com"
+  
+  # Étudiants INF232
+  - username: "etudiant"
+    password: "inf232"
+    role: "user"
+    email: "etudiant@datasense.com"
+  
+  # Prof. Rollin Francis
+  - username: "rollinfrancis"
+    password: "prof2024"
+    role: "professor"
+    email: "rollinfrancis28@gmail.com"
+
+# Paramètres de session
+session:
+  timeout_minutes: 60
+  max_attempts: 5
+  lockout_minutes: 15
+
+# Application
+app:
+  name: "Data Sense Analytics"
+  version: "2.0.0"
+  theme: "Heaven & Hell"

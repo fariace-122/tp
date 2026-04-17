@@ -1,0 +1,252 @@
+/* ==========================================
+   THÈME DE L'ENFER - PAGE DE LOGIN
+   Data Sense Analytics
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Creepster&display=swap');
+
+/* Fond animé de flammes */
+.stApp[data-testid="stApp"] {
+    background: linear-gradient(135deg, #1a0000 0%, #330000 25%, #4d0000 50%, #330000 75%, #1a0000 100%);
+    background-size: 400% 400%;
+    animation: hellfireBackground 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes hellfireBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Effet de flammes en bas */
+.stApp::before {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top, 
+        rgba(255, 69, 0, 0.8) 0%,
+        rgba(255, 140, 0, 0.6) 30%,
+        rgba(255, 215, 0, 0.3) 60%,
+        transparent 100%);
+    animation: flameFlicker 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes flameFlicker {
+    0%, 100% { opacity: 0.8; transform: scaleY(1); }
+    25% { opacity: 0.6; transform: scaleY(0.95); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+    75% { opacity: 0.7; transform: scaleY(0.9); }
+}
+
+/* Particules de cendres */
+.stApp::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 40%, rgba(255, 100, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 60%, rgba(255, 50, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 30%, rgba(255, 150, 0, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Container du login - Portail des Enfers */
+div[data-testid="stVerticalBlock"] {
+    position: relative;
+    z-index: 10;
+}
+
+/* Carte de login */
+div[data-testid="stForm"] {
+    background: linear-gradient(145deg, 
+        rgba(20, 0, 0, 0.95) 0%,
+        rgba(40, 0, 0, 0.95) 50%,
+        rgba(20, 0, 0, 0.95) 100%);
+    border: 3px solid #ff4500;
+    border-radius: 20px;
+    padding: 40px !important;
+    box-shadow: 
+        0 0 50px rgba(255, 69, 0, 0.5),
+        0 0 100px rgba(255, 0, 0, 0.3),
+        inset 0 0 30px rgba(255, 69, 0, 0.2);
+    backdrop-filter: blur(10px);
+    animation: portalPulse 4s ease-in-out infinite;
+}
+
+@keyframes portalPulse {
+    0%, 100% { 
+        box-shadow: 
+            0 0 50px rgba(255, 69, 0, 0.5),
+            0 0 100px rgba(255, 0, 0, 0.3),
+            inset 0 0 30px rgba(255, 69, 0, 0.2);
+    }
+    50% { 
+        box-shadow: 
+            0 0 80px rgba(255, 69, 0, 0.8),
+            0 0 150px rgba(255, 0, 0, 0.5),
+            inset 0 0 50px rgba(255, 69, 0, 0.4);
+    }
+}
+
+/* Titres - Style Gothique/Démoniaque */
+h1, h2, h3 {
+    font-family: 'Cinzel', serif !important;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 
+        0 0 10px #ff4500,
+        0 0 20px #ff0000,
+        0 0 30px #8b0000;
+    background: linear-gradient(45deg, #ff4500, #ffd700, #ff4500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+}
+
+/* Champs de saisie - Stèle de l'Enfer */
+input, .stTextInput > div > div > input {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid #ff4500 !important;
+    border-radius: 8px !important;
+    color: #ffd700 !important;
+    font-family: 'Cinzel', serif !important;
+    font-size: 16px !important;
+    padding: 12px 15px !important;
+    transition: all 0.3s ease !important;
+}
+
+input:focus {
+    border-color: #ffd700 !important;
+    box-shadow: 
+        0 0 20px #ff4500,
+        0 0 40px #ff0000,
+        inset 0 0 10px rgba(255, 69, 0, 0.5) !important;
+    transform: scale(1.02);
+}
+
+input::placeholder {
+    color: #ff6666 !important;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* Labels - Écriture de Feu */
+label, .stTextInput label {
+    color: #ff8c00 !important;
+    font-family: 'Cinzel', serif !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #ff0000;
+}
+
+/* Bouton - Pacte Démoniaque */
+.stButton > button {
+    background: linear-gradient(135deg, #8b0000 0%, #ff4500 50%, #8b0000 100%) !important;
+    background-size: 200% 200% !important;
+    border: 2px solid #ffd700 !important;
+    border-radius: 50px !important;
+    color: #ffd700 !important;
+    font-family: 'Cinzel', serif !important;
+    font-size: 20px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 5px !important;
+    padding: 15px 40px !important;
+    cursor: pointer !important;
+    transition: all 0.5s ease !important;
+    animation: buttonPulse 2s ease-in-out infinite;
+    text-shadow: 0 0 10px #ff0000;
+    box-shadow: 
+        0 5px 0 #4a0000,
+        0 8px 20px rgba(255, 0, 0, 0.5);
+}
+
+@keyframes buttonPulse {
+    0%, 100% { 
+        background-position: 0% 50%;
+        box-shadow: 
+            0 5px 0 #4a0000,
+            0 8px 20px rgba(255, 0, 0, 0.5);
+    }
+    50% { 
+        background-position: 100% 50%;
+        box-shadow: 
+            0 5px 0 #4a0000,
+            0 15px 30px rgba(255, 69, 0, 0.8);
+    }
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, #ff4500 0%, #ffd700 50%, #ff4500 100%) !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 8px 0 #4a0000,
+        0 15px 30px rgba(255, 215, 0, 0.6);
+    text-shadow: 0 0 20px #ffffff;
+}
+
+.stButton > button:active {
+    transform: translateY(5px);
+    box-shadow: 
+        0 2px 0 #4a0000,
+        0 5px 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Messages d'erreur - Damnation */
+.stAlert {
+    background: linear-gradient(135deg, #8b0000, #ff0000) !important;
+    border: 2px solid #ffd700 !important;
+    border-radius: 10px !important;
+    color: #ffd700 !important;
+    font-family: 'Cinzel', serif !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    box-shadow: 0 0 30px #ff0000;
+    animation: errorShake 0.5s ease;
+}
+
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* Pentagramme décoratif */
+.login-decoration {
+    text-align: center;
+    font-size: 50px;
+    margin: 20px 0;
+    text-shadow: 0 0 30px #ff4500;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Sidebar en Enfer */
+.css-1d391kg, .css-1wivap2 {
+    background: linear-gradient(135deg, #1a0000, #330000) !important;
+    border-right: 3px solid #ff4500 !important;
+}

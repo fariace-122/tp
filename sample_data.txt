@@ -1,0 +1,16 @@
+Age,Salaire,Experience,Heures_Travail,Satisfaction,Departement
+25,45000,2,40,7,IT
+32,65000,7,45,8,Marketing
+28,52000,4,38,6,RH
+45,95000,20,42,9,Direction
+35,72000,10,40,7,IT
+29,48000,3,37,5,Marketing
+41,88000,16,44,8,Finance
+38,76000,12,39,7,IT
+27,50000,3,36,6,RH
+33,68000,8,41,8,Finance
+30,55000,5,38,7,Marketing
+50,110000,25,43,9,Direction
+26,46000,2,35,5,IT
+42,92000,18,40,9,Finance
+31,60000,6,39,7,RH
